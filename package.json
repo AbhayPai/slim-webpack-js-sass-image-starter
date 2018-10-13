@@ -1,0 +1,50 @@
+{
+  "name": "boilerplate-slim-webpack-js-sass-image",
+  "version": "1.0.0",
+  "description": "Boilerplate Slim Webpack Js Sass Image Bootsrap 4",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --progress --colors --watch --mode development",
+    "build": "webpack --progress --colors --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AbhayPai/boilerplate-slim-webpack-js-sass-image"
+  },
+  "keywords": [
+    "nodejs",
+    "npm",
+    "webpack",
+    "babel",
+    "sass",
+    "Image",
+    "bootstrap4"
+  ],
+  "author": "Abhay Pai",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "bootstrap": "^4.1.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.3",
+    "css-loader": "^1.0.0",
+    "cssnano": "^4.1.4",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^2.0.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.9.3",
+    "optimize-css-assets-webpack-plugin": "^4.0.0",
+    "popper.js": "^1.14.4",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.22.1",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {}
+}
