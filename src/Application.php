@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace app;
 
-use App\Configuration\Settings;
-use App\Configuration\Dependencies;
-use App\Configuration\Routes;
-use App\Configuration\Middleware;
+use app\configuration\Settings;
+use app\configuration\Dependencies;
+use app\configuration\Routes;
+use app\configuration\Middleware;
 
 class Application
 {

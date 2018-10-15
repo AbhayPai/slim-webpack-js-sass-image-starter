@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Configuration;
+namespace app\configuration;
 
 class Settings
 {

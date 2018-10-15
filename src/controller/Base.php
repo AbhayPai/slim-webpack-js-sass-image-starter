@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace app\controller;
 
 // Psr-7 Request and Response interfaces
 use Psr\Http\Message\ServerRequestInterface as Request;

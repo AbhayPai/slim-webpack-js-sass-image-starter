@@ -1,0 +1,13 @@
+{
+  "name": "Boilerplate Slim Webpack Js Sass Image",
+  "short_name": "Simple Offline Website",
+  "description": "Boilerplate Slim Webpack Js Sass Image Bootsrap 4",
+  "dir": "ltr",
+  "lang": "en",
+  "theme_color": "#FFFFFF",
+  "background_color": "#000000",
+  "display": "standalone",
+  "orientation": "natural",
+  "start_url": "/",
+  "categories": ["technology", "web"]
+}

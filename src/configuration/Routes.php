@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Configuration;
+namespace app\configuration;
 
 class Routes
 {
@@ -21,7 +21,7 @@ class Routes
         [
           'title' => 'Index',
           'route' => '/',
-          'classname' => '\App\Controller\Index',
+          'classname' => '\app\controller\Index',
         ],
       ];
 

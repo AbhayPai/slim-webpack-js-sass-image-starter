@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Controller;
+namespace app\controller;
 
-use App\Controller\Base;
+use app\controller\Base;
 
 class Index extends Base
 {
@@ -12,6 +12,6 @@ class Index extends Base
       'pagetitle' => 'Boilerplate for Slim Webpack Js Sass Image Bootsrap 4 | Abhay Pai',
     ];
 
-    return $this->view->render($response, 'index.twig', $data);
+    return $this->view->render($response, 'index.html.twig', $data);
   }
 }

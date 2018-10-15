@@ -10,10 +10,23 @@
   <link rel="icon" href="{{base_url()}}/assets/images/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="{{base_url()}}/assets/images/favicon.ico" type="image/x-icon">
   <title>{{pagetitle}}</title>
+  <link rel="manifest" href="{{base_url()}}/manifest.json">
   <link rel="stylesheet" href="{{base_url()}}/assets/css/vendor.css">
   <link rel="stylesheet" href="{{base_url()}}/assets/css/index.css">
 </head>
 <body>
   <h1 class="app-center text-primary">Boilerplate Slim Webpack Js Sass Images</h1>
+  <script type="text/javascript" src="{{base_url()}}/assets/js/index.js"></script>
+  <script type="text/javascript">
+  (function () {
+    if ("serviceWorker" in navigator){
+    navigator.serviceWorker.register("/serviceworker.js").then(function(registration){
+        console.log("service worker reg", registration.scope)
+    }).catch(function(error){
+            console.log("Error:", error);
+        })
+    }
+  })();
+  </script>
 </body>
 </html>
