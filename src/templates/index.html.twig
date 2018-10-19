@@ -17,16 +17,5 @@
 <body>
   <h1 class="app-center text-primary">Boilerplate Slim Webpack Js Sass Images</h1>
   <script type="text/javascript" src="{{base_url()}}/assets/js/index.js"></script>
-  <script type="text/javascript">
-  (function () {
-    if ("serviceWorker" in navigator){
-    navigator.serviceWorker.register("/serviceworker.js").then(function(registration){
-        console.log("service worker reg", registration.scope)
-    }).catch(function(error){
-            console.log("Error:", error);
-        })
-    }
-  })();
-  </script>
 </body>
 </html>
