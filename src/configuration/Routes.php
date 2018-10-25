@@ -1,6 +1,7 @@
 <?php
 
 namespace app\configuration;
+use Symfony\Component\Yaml\Yaml;
 
 class Routes
 {
@@ -17,16 +18,8 @@ class Routes
   public function init()
   {
     try {
-      $data = [
-        [
-          'title' => 'Index',
-          'route' => '/',
-          'classname' => '\app\controller\Index',
-        ],
-      ];
-
-      foreach ($data as $path) {
-        $this->setRoute($path['title'], $path['route'], $path['classname']);
+      foreach (Yaml::parseFIle(YAML_DIR . "routes.yaml") as $key => $value) {
+        $this->setRoute($value['title'], $key, $value['classname']);
       }
 
       return;

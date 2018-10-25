@@ -16,7 +16,8 @@
   "require": {
     "php": ">=5.6.0",
     "slim/slim": "^3.0",
-    "slim/twig-view": "^2.4"
+    "slim/twig-view": "^2.4",
+    "symfony/yaml": "^4.1"
   },
   "require-dev": {
     "kint-php/kint": "^3.0"

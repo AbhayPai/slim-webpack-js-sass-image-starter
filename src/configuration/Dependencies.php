@@ -14,6 +14,11 @@ class Dependencies
 
   public function init()
   {
+    return self::setDependencies();
+  }
+
+  public function setDependencies()
+  {
     // Twig view dependency
     $this->container['view'] = function ($c) {
       $cf = $c->get('settings')['view'];

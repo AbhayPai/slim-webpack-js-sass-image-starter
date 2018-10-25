@@ -2,6 +2,7 @@
 
 namespace app;
 
+use app\helpers\GlobalDefinition;
 use app\configuration\Settings;
 use app\configuration\Dependencies;
 use app\configuration\Routes;
@@ -11,16 +12,16 @@ class Application
 {
   public function init()
   {
-    $settings = new Settings();
-    $app = new \Slim\App($settings->init());
+    GlobalDefinition::init();
+
+    $app = new \Slim\App(Settings::init());
 
     $dependencies = new Dependencies($app);
-    $dependencies->init();
-
     $routes = new Routes($app);
-    $routes->init();
-
     $middleware = new Middleware($app);
+
+    $dependencies->init();
+    $routes->init();
     $middleware->init();
 
     return $app->run();

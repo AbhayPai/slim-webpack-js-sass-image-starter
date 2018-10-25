@@ -13,8 +13,7 @@ class Middleware
 
   public function init()
   {
-    self::setIframeDeny();
-    return;
+    return self::setIframeDeny();
   }
 
   public function setIframeDeny()
