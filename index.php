@@ -2,7 +2,7 @@
 
 require 'vendor/autoload.php';
 
-use app\Application;
+use App\Application;
 
 $application = new Application();
 $application->init();

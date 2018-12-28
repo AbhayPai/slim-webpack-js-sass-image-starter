@@ -4,7 +4,7 @@
   "keywords": ["routing", "router"],
   "autoload": {
     "psr-4": {
-      "app\\": "src"
+      "App\\": "src"
     }
   },
   "authors": [

@@ -1,12 +1,12 @@
 <?php
 
-namespace app\helpers;
+namespace App\Helpers;
 
 class GlobalDefinition
 {
-  public function init()
-  {
-    define("YAML_DIR", getcwd() . "/src/yaml/");
-    return;
-  }
+    public function init()
+    {
+        define("YAML_DIR", getcwd() . "/src/yaml/");
+        return;
+    }
 }

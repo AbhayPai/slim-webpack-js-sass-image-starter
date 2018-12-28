@@ -1,9 +1,9 @@
 settings:
-  displayErrorDetails: TRUE
-  debug: FALSE
-  view:
-    path: 'src/templates/'
-    twig:
-      cache: FALSE
-      # cache: 'cache/templates/'
-  iframing: FALSE
+    displayErrorDetails: TRUE
+    debug: FALSE
+    view:
+        path: 'src/templates/'
+        twig:
+            cache: FALSE
+            # cache: 'cache/templates/'
+    iframing: FALSE
