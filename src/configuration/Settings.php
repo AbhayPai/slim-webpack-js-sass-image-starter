@@ -1,28 +1,12 @@
 <?php
 
-namespace app\configuration;
+namespace App\Configuration;
+use Symfony\Component\Yaml\Yaml;
 
 class Settings
 {
-  const TEMPLATE_DIRECTORY = 'src/templates/';
-  const CACHE_TEMPLATE_DIRECTORY = 'cache/templates/';
-
-  public function init()
-  {
-    return
-    [
-      'settings' =>
-      [
-        'displayErrorDetails' => TRUE,
-        'debug' => FALSE,
-        'view' => [
-          'path' => self::TEMPLATE_DIRECTORY,
-          'twig' => [
-            'cache' => FALSE,
-          ],
-        ],
-        'iframing' => FALSE,
-      ],
-    ];
-  }
+    public function init()
+    {
+        return Yaml::parseFIle(YAML_DIR . "settings.yaml");
+    }
 }
