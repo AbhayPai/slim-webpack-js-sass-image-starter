@@ -18,9 +18,10 @@ class Routes
     public function init()
     {
         try {
-            foreach (Yaml::parseFIle(YAML_DIR . "routes.yaml") as $key => $value) {
+            foreach (Yaml::parseFIle(YAML_DIR."routes.yaml") as $key => $value) {
                 $this->setRoute($value['title'], $key, $value['classname']);
             }
+
         return;
         } catch (Exception $e) {
             return $e->getMessage();

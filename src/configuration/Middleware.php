@@ -6,9 +6,9 @@ class Middleware
 {
     public function __construct($app)
     {
-        $this->app = $app;
+        $this->app       = $app;
         $this->container = $this->app->getContainer();
-        $this->settings = $this->container['settings'];
+        $this->settings  = $this->container['settings'];
     }
 
     public function init()
@@ -20,12 +20,15 @@ class Middleware
     {
         $iframing = $this->settings['iframing'] ?? TRUE;
 
-        if ($iframing)
+        if ($iframing) {
             return;
+        }
 
-        return $this->app->add(function ($request, $response, $next) {
+        return $this->app->add(
+            function ($request, $response, $next) {
             $response = $next($request, $response);
             return $response->withHeader('X-Frame-Options', 'Deny');
-        });
+            }
+        );
     }
 }
