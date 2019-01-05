@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace App\System;
 
-use App\Helpers\GlobalDefinition;
+use App\Utilities\GlobalDefinition;
 use App\Configuration\Settings;
 use App\Configuration\Dependencies;
 use App\Configuration\Routes;
@@ -17,8 +17,8 @@ class Application
         $app = new \Slim\App(Settings::init());
 
         $dependencies = new Dependencies($app);
-        $routes = new Routes($app);
-        $middleware = new Middleware($app);
+        $routes       = new Routes($app);
+        $middleware   = new Middleware($app);
 
         $dependencies->init();
         $routes->init();

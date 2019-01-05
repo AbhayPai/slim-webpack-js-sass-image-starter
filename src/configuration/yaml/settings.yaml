@@ -2,8 +2,8 @@ settings:
     displayErrorDetails: TRUE
     debug: FALSE
     view:
-        path: 'src/templates/'
+        path: 'src/Pages/'
         twig:
             cache: FALSE
-            # cache: 'cache/templates/'
+            # cache: 'cache/Pages/'
     iframing: FALSE
