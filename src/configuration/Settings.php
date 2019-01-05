@@ -7,6 +7,6 @@ class Settings
 {
     public function init()
     {
-        return Yaml::parseFIle(YAML_DIR . "settings.yaml");
+        return Yaml::parseFIle(YAML_DIR."settings.yaml");
     }
 }
