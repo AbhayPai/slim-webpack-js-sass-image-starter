@@ -1,32 +1,31 @@
 const Path = require("path");
+const CssNano = require('cssnano');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CssNano = require('cssnano');
 
 let PathsToClean = [
-    './assets/css',
-    './assets/js',
-    './assets/images',
+    './assets/*'
 ];
 
 let CleanOptions = {
+    verbose:  true,
+    allowExternal: true,
     exclude:  [
         './cache/*',
         './node_modules/*',
         './src/*',
         './vendor/*',
     ],
-    verbose:  true,
 };
 
 module.exports = {
     resolve: {
         alias: {
-            Controller: Path.resolve(__dirname, 'src/assets/js/Controller/'),
-            Sass: Path.resolve(__dirname, 'src/assets/sass')
+            Sass: Path.resolve(__dirname, 'src/assets/sass'),
+            Controller: Path.resolve(__dirname, 'src/assets/js/Controller/')
         }
     },
 
@@ -36,8 +35,8 @@ module.exports = {
     },
 
     output: {
-        path: Path.join(__dirname, "./", "assets/", "js/"),
-        filename: "[name].js"
+        filename: "[name].js",
+        path: Path.join(__dirname, "./", "assets/", "js/")
     },
 
     module:{
@@ -50,19 +49,20 @@ module.exports = {
             },
         }, {
             test: /\.scss$/,
-            exclude: /node_modules/,
-            use: ExtractTextPlugin.extract({
-                fallback: "style-loader",
-                use: [{
-
-
-                loader: 'css-loader',
-                }, {
-
-
-                loader: 'sass-loader',
-                }]
-            })
+            use: [
+                'style-loader',
+                MiniCssExtractPlugin.loader,
+                {
+                    loader: "css-loader",
+                    options: {
+                        minimize: true,
+                        sourceMap: true
+                    }
+                },
+                {
+                    loader: "sass-loader"
+                }
+            ]
         }, {
 
             test: /\.woff|woff2|eot|ttf|svg$/,
@@ -75,7 +75,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(
             PathsToClean,
-            { CleanOptions }
+            CleanOptions
         ),
 
         new UglifyJsPlugin({
@@ -84,14 +84,14 @@ module.exports = {
             }
         }),
 
-        new ExtractTextPlugin({
+        new MiniCssExtractPlugin({
             filename: "./../css/[name].css"
         }),
 
         new CopyWebpackPlugin([
             {
-                from: Path.join(__dirname, "./", "src/", "assets/", "images/"),
                 to: Path.join(__dirname, "./", "assets/", "images/"),
+                from: Path.join(__dirname, "./", "src/", "assets/", "images/"),
             }
         ]),
 
