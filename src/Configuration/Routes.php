@@ -3,6 +3,9 @@
 namespace App\Configuration;
 use Symfony\Component\Yaml\Yaml;
 
+/*
+ * Routes
+ */
 class Routes
 {
     protected $app;

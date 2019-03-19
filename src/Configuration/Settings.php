@@ -3,6 +3,9 @@
 namespace App\Configuration;
 use Symfony\Component\Yaml\Yaml;
 
+/*
+ * Settings
+ */
 class Settings
 {
     public function init()

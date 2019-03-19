@@ -2,6 +2,9 @@
 
 namespace App\Configuration;
 
+/*
+ * Middleware
+ */
 class Middleware
 {
     public function __construct($app)

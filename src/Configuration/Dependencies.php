@@ -2,6 +2,9 @@
 
 namespace App\Configuration;
 
+/*
+ * Dependencies
+ */
 class Dependencies
 {
     protected $app;
